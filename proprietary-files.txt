@@ -931,6 +931,11 @@ etc/firmware/a330_pfp.fw|3e2fcee7276ded819cf2d95864fdd6788a484ee1
 etc/firmware/a330_pm4.fw|ae739ea812f9e4462d7bba8b9ead5782d4496618
 etc/firmware/a420_pfp.fw|ceb61d9f1385b3f2956d72f33e0bd43cb12f72f0
 etc/firmware/a420_pm4.fw|96addc1f5cb6dd3a57fc40ef0a6ba8721d5b601f
+etc/firmware/a506_zap.b00|c45a7b34456844f5deb73e2dce79cbfcfb9ae71c
+etc/firmware/a506_zap.b01|f496361433d2fd2e0f2ee991c7c7d896d0f8750d
+etc/firmware/a506_zap.b02|b79957c47f0a6757ac1d721dbe06551508454634
+etc/firmware/a506_zap.elf|76274c20a53a15e56cc9623c42f612a72af921be
+etc/firmware/a506_zap.mdt|6c3187ee819a9f09de527bf2285bc3b9377bd47a
 etc/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
 etc/firmware/a530_pfp.fw|448f9db8271fefb08348cbc50409e8e95bd93f78
 etc/firmware/a530_pm4.fw|5741a28752355b478d455635bab008028ff7e1c6
@@ -1166,3 +1171,4 @@ vendor/lib/mediadrm/libwvdrmengine.so|70419ce1f8eb6bd3aa36234f8d7e8003569efc9c
 
 # Wi-Fi - from tissot (Mi A1)
 bin/wcnss_service|9244d67a3d460db67fce152eb7d319f32009210d
+
