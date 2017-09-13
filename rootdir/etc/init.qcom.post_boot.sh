@@ -1133,7 +1133,7 @@ case "$target" in
                 esac
 
                 #scheduler settings
-                echo 3 > /proc/sys/kernel/sched_window_stats_policy
+                echo 2 > /proc/sys/kernel/sched_window_stats_policy
                 echo 3 > /proc/sys/kernel/sched_ravg_hist_size
                 #task packing settings
                 echo 0 > /sys/devices/system/cpu/cpu0/sched_static_cpu_pwr_cost
@@ -1148,9 +1148,9 @@ case "$target" in
                 #init task load, restrict wakeups to preferred cluster
                 echo 15 > /proc/sys/kernel/sched_init_task_load
                 # spill load is set to 100% by default in the kernel
-                echo 3 > /proc/sys/kernel/sched_spill_nr_run
+                echo 6 > /proc/sys/kernel/sched_spill_nr_run
                 # Apply inter-cluster load balancer restrictions
-                echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
+                echo 0 > /proc/sys/kernel/sched_restrict_cluster_spill
 
 
                 for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
@@ -1302,14 +1302,14 @@ case "$target" in
 
                 # SMP scheduler
                 echo 85 > /proc/sys/kernel/sched_upmigrate
-                echo 85 > /proc/sys/kernel/sched_downmigrate
-                echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
+                echo 75 > /proc/sys/kernel/sched_downmigrate
+                echo 25 > /proc/sys/kernel/sched_upmigrate_min_nice
 
                 # Enable sched guided freq control
                 echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_sched_load
                 echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_migration_notif
-                echo 200000 > /proc/sys/kernel/sched_freq_inc_notify
-                echo 200000 > /proc/sys/kernel/sched_freq_dec_notify
+                echo 250000 > /proc/sys/kernel/sched_freq_inc_notify
+                echo 250000 > /proc/sys/kernel/sched_freq_dec_notify
 
                 # Set Memory parameters
                 configure_memory_parameters
@@ -2222,10 +2222,10 @@ case "$target" in
         setprop sys.post_boot.parsed 1
     ;;
     "msm8937" | "msm8953")
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
-        echo 128 > /sys/block/dm-0/queue/read_ahead_kb
-        echo 128 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 2048 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 2048 > /sys/block/mmcblk0/queue/read_ahead_kb
+        echo 2048 > /sys/block/dm-0/queue/read_ahead_kb
+        echo 2048 > /sys/block/dm-1/queue/read_ahead_kb
         setprop sys.post_boot.parsed 1
         start gamed
     ;;
